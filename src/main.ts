@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './animation_demo.vue'
+import App from './App.vue'
 import axios from 'axios'
+//import router
+import router from './router'
 //import element --
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -19,6 +21,9 @@ axios.defaults.baseURL = "/api"
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
+//--------------------
+app.use(router)
+//use router
 //--------------------
 app.use(ElementPlus)
 //import and mount element-plus
